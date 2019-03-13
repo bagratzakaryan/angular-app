@@ -1,0 +1,10 @@
+.header {
+	font-family: 'OpenSans-Light';
+}
+.label,
+.value {
+	font-family: 'OpenSans-Bold' !important;
+}
+a {
+	user-select: none;
+}
