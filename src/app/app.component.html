@@ -1,6 +1,22 @@
-<h1>
+<h1 [ngClass]="classesObj">
 	Welcome to {{ 'armenian' | translate }} Language!
 </h1>
+<button (click)="toggleBorder()">toggle</button>
+
+<br>
+<br>
+<div>{{text}}</div>
+<br>
+<br>
+
+<div class='ngNonBindableDemo'>
+	<span class="bordered">{{ content }}</span>
+	<span class="pre" ngNonBindable>
+		&larr; This is what {{ content }} rendered
+	</span>
+</div>
+<br>
+
 <div>
 	<button class="ui download primary button" (click)="setLang('eng')">Language: English</button>
 	<button class="ui download primary button" (click)="setLang('arm')">Language: Armenian</button>
@@ -36,3 +52,12 @@
 		</li>
 	</ul>
 </div>
+
+<br>
+<br>
+<br>
+
+<form-root></form-root>
+
+
+

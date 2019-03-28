@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipeModule } from './pipe.module';
 
 import { AppComponent } from './app.component';
+import { FormComponent } from './form/form.component';
 
 import { TranslateService } from './translate.service';
-import { TranslatePipe } from './translate.pipe';
 
 export function setupTranslateFactory(
 	service: TranslateService): Function {
@@ -16,10 +17,13 @@ export function setupTranslateFactory(
 @NgModule({
 	declarations: [
 		AppComponent,
+		FormComponent
 	],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
+		FormsModule,
+		ReactiveFormsModule,
 		PipeModule
 	],
 	providers: [

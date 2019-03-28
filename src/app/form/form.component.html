@@ -1,0 +1,24 @@
+<div class="ui raised segment">
+	<h2 class="ui header">Demo Form: with validations (shorthand)</h2>
+
+	<form class="ui form" [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+		<div class="field" [class.error]="!formError() || controlError(userForm.controls['firstname'])">
+			<label for="firstname">First Name</label>
+			<input type="text" id="firstname" [formControl]="userForm.controls['firstname']">
+			<div class="ui error message" [style.display]="controlError(userForm.controls['firstname']) ? 'block' : 'none'">First Name is invalid</div>
+		</div>
+		<div class="field" [class.error]="!formError() || controlError(userForm.controls['lastname'])">
+			<label for="lastname">Last Name</label>
+			<input type="text" id="lastname" [formControl]="userForm.controls['lastname']">
+			<div class="ui error message" [style.display]="controlError(userForm.controls['lastname']) ? 'block' : 'none'">Last Name is invalid</div>
+		</div>
+		<div class="field" [class.error]="!formError() || controlError(userForm.controls['email'])">
+			<label for="email">Email</label>
+			<input type="email" id="email" [formControl]="userForm.controls['email']">
+			<div class="ui error message" [style.display]="controlError(userForm.controls['email']) ? 'block' : 'none'">Email is invalid</div>
+		</div>
+
+		<div class="ui error message" [style.display]="!formError() ? 'block' : 'none'">Form is invalid</div>
+		<button type="submit" class="ui button">Submit</button>
+	</form>
+</div>
